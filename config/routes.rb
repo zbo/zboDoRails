@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :readers
+  get 'reader_article/edit'
   get 'welcome/index'
   root 'welcome#index'
   resources :articles do
