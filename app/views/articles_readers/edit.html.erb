@@ -19,6 +19,12 @@
   <%= f.submit 'connect'%>
 </li>
 <%end%>
+<%= form_tag('my_api') do %>
+    <%= text_field_tag :email, "Your email address..." %>
+    <%= hidden_field_tag :ref_code,  @referralid %>
+    <%= hidden_field_tag :api_name, 'your_api_name' %>
+    <%= submit_tag "Enter To Win" %>
+<% end %>
 
 <p>all article bind:</p>
 <% @articles.each do |ar|%>
