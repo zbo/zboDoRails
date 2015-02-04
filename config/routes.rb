@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :readers
-  get 'reader_article/edit'
-  get 'welcome/index'
-  root 'welcome#index'
+  resource :articles_readers
   resources :articles do
     resources :comments
   end
+
+  get 'articles_readers/index'
+  get 'welcome/index'
+  root 'welcome#index'
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

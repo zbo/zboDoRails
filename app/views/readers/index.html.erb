@@ -17,7 +17,7 @@
         <td><%= link_to 'Show', reader %></td>
         <td><%= link_to 'Edit', edit_reader_path(reader) %></td>
         <td><%= link_to 'Destroy', reader, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'connect article', {:controller => "reader_article", :action => "edit", :id=>reader} %></td>
+        <td><%= link_to 'connect article', {:controller => "articles_readers", :action => "edit", :id=>reader} %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,29 @@
+<h1>Editing article</h1>
+
+<%= form_for @submit do |f| %>
+<li>reader id is:<%= @reader_id%></li>
+<li>reader name is:<%= @reader_name%></li>
+<li>article connected all:<%= @article_reader.size%></li>
+<li><%= f.text_field :reader_id,:value=>@reader_id%></li>
+<table>
+  <% @article_reader.each do |ra|%>
+  <tr>
+    <td><%= ra.article_id%></td>
+    <td><%= ra.reader_id%></td>
+  <tr>
+  <% end %>
+</table>
+<li>
+  article available for connect:
+  <%= select(:article_id,'', @article_available.map{|c| [c.title, c.id]} ) %>
+  <%= f.submit 'connect'%>
+</li>
+<%end%>
+
+<p>all article bind:</p>
+<% @articles.each do |ar|%>
+<li><%= ar.title%></li>
+<%end%>
+<%= render 'form' %>
+
+<%= link_to 'Back', {:controller => "readers", :action => "index"} %>
