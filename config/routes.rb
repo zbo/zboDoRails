@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'articles_readers/index'
   post 'articles_readers/index'
   post 'articles_readers/my_api'
+  post 'articles_readers/api_connect'
   get 'welcome/index'
   root 'welcome#index'
 

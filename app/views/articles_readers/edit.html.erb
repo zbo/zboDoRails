@@ -1,6 +1,6 @@
 <h1>Editing article</h1>
 
-<%= form_for @submit do |f| %>
+<%= form_for @submit,:url=>'api_connect' do |f| %>
 <li>reader id is:<%= @reader_id%></li>
 <li>reader name is:<%= @reader_name%></li>
 <li>article connected all:<%= @article_reader.size%></li>

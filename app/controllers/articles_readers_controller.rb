@@ -12,6 +12,12 @@ class ArticlesReadersController < ApplicationController
     @submit=ArticlesReaders.new
   end
 
+  def api_connect
+    puts '====================='
+    puts '=====connect========='
+    puts '====================='
+  end
+
   def index
     puts '====================='
     puts '=====index==========='
