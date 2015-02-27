@@ -1,5 +1,17 @@
 <h1>Editing article</h1>
 
+<% if @errors.size>0 %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@errors.count, "error") %> prohibited
+        this mapping from being saved:</h2>
+      <ul>
+        <% @errors.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <%= form_for @submit,:url=>'api_connect' do |f| %>
 <li>reader id is:<%= @reader_id%></li>
 <li>reader name is:<%= @reader_name%></li>
